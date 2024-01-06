@@ -223,33 +223,73 @@ EE23BTECH11202
 \section{Solution}
 
 \begin{table}[htbp]                                       \centering                                              \caption{Input Parameters}
-  \label{tab:parameters}                                  \begin{tabular}{lc}                                       \toprule                                                \textbf{Parameter} & \textbf{Value} \\                  \midrule                                                Mass ($M$) & $50$ kg \\                                 Maximum displacement of the spring ($l$) & $0.2$ m \\                                                           Time period ($T$) & $0.6$ s \\                              \bottomrule                                           \end{tabular}                                         \end{table}
+  \label{tab:parameters}                                  \begin{tabular}{lc}                                       \toprule                                                \textbf{Parameter} & \textbf{Value} \\                  \midrule                                                Mass ($M$) & $50$ kg \\ 
+  Maximum displacement of the spring ($l$) & $0.2$ m \\ 
+  Time period ($T$) & $0.6$ s \\                              \bottomrule                                           \end{tabular}                                         \end{table}
 
 
 The maximum mass that the scale can read is given by:
-\begin{equation}
-M = 50 \, \text{kg}
-\end{equation}
 
-The maximum displacement of the spring is equal to the length of the scale, given by:
-\begin{equation}
+	\begin{equation}
+	M = 50 \, \text{kg}
+	\end{equation}
+	
+	\begin{figure}[htbp]
+		\centering
+	\begin{tikzpicture}                                      % Draw the spring
+\draw[thick, line width=1pt] (0,0) -- (0,-2);           \draw[decorate, decoration={coil, aspect=0.5, segment length=1mm, amplitude=3mm}] (0,-2) -- (0,-4);                                                                 
+	% Draw the mass
+	\draw[thick, fill=gray!30] (-1,-4.5) rectangle (1,-5.5);                                                        \draw[thick] (0,-2) -- (0,-4.5);                                                                                % Label the mass
+	\node at (0,-5) {$M = 50$ kg};                    	\end{tikzpicture}
+	\end{figure}
+
+
+
+	The maximum displacement of the spring is equal to the length of the scale, given by:
+
+	\begin{equation}
 l = 20 \, \text{cm} = 0.2 \, \text{m}
-\end{equation}
-The time period is given as:
-\begin{equation}
+	\end{equation}
+
+
+	\begin{tikzpicture}                                             % Draw the spring
+	\draw[thick, line width=1pt] (0,0) -- (0,-2);           \draw[decorate, decoration={coil, aspect=0.5, segment length=1mm, amplitude=3mm}] (0,-2) -- (0,-4);                                                                 % Draw the mass
+	\draw[thick, fill=gray!30] (-1,-4.5) rectangle (1,-5.5);                                                        \draw[thick] (0,-2) -- (0,-4.5);                        % Label the mass
+	\node at (0,-5) {$M = 50$ kg};                          % Label the spring length
+	\draw[<->] (-1.5,-2) -- node[left] {$l = 0.2$ m} (-1.5,-4);                                            
+	\end{tikzpicture}
+
+
+	The time period is given as:
+
+	\begin{equation}
 T = 0.6 \, \text{s}
-\end{equation}
+	\end{equation}
 
 The maximum force exerted on the spring is calculated using:
-\begin{equation}
-F = Mg
-\end{equation}
-where \( g \) is the acceleration due to gravity (\( 9.8 \, \text{m/s}^2 \)):\
-\begin{equation}
-F = 50 \times 9.8 = 490 \, \text{N}
-\end{equation}
 
-\begin{tikzpicture}
+	\begin{equation}
+F = Mg
+	\end{equation}
+where \( g \) is the acceleration due to gravity (\( 9.8 \, \text{m/s}^2 \)):\
+
+
+	\begin{tikzpicture}                                             % Draw the spring
+	\draw[thick, line width=1pt] (0,0) -- (0,-2);           \draw[decorate, decoration={coil, aspect=0.5, segment length=1mm, amplitude=3mm}] (0,-2) -- (0,-4);                                                                 % Draw the mass
+	\draw[thick, fill=gray!30] (-1,-4.5) rectangle (1,-5.5);                                                        \draw[thick] (0,-2) -- (0,-4.5);                                                                                % Label the mass
+	\node at (0,-5) {$M = 50$ kg};                          % Label the spring length
+	\draw[<->] (-1.5,-2) -- node[left] {$l = 0.2$ m} (-1.5,-4);                                                                                                             % Label the force arrows
+	\draw[->, thick, red] (0,-5.5) -- node[right] {$F = $Mg } (0,-7);                                
+
+	\end{tikzpicture}
+
+
+	\begin{equation}
+F = 50 \times 9.8 = 490 \, \text{N}
+	\end{equation}
+
+
+	\begin{tikzpicture}
 	% Draw the spring
 	\draw[thick, line width=1pt] (0,0) -- (0,-2);           \draw[decorate, decoration={coil, aspect=0.5, segment length=1mm, amplitude=3mm}] (0,-2) -- (0,-4);                                                                 % Draw the mass
 	\draw[thick, fill=gray!30] (-1,-4.5) rectangle (1,-5.5);                                                        \draw[thick] (0,-2) -- (0,-4.5);                                                                                % Label the mass
@@ -257,7 +297,8 @@ F = 50 \times 9.8 = 490 \, \text{N}
     % Label the spring length
 	\draw[<->] (-1.5,-2) -- node[left] {$l = 0.2$ m} (-1.5,-4);                                                                                                             % Label the force arrows
 	\draw[->, thick, red] (0,-5.5) -- node[right] {$F = Mg = 490$ N} (0,-7);    
-\end{tikzpicture}
+
+	\end{tikzpicture}
 
 
 
@@ -270,9 +311,11 @@ The time period, \( t \), for mass \( m \) suspended from the balance is given b
 t = 2\pi\sqrt{\frac{m}{k}}
 \end{equation}
 Hence, solving for \( m \):
+
 \begin{equation}
 m = \left(\frac{T}{2\pi}\right)^2 \times k = \left(\frac{0.6}{2 \times 3.14}\right)^2 \times 2450 = 22.36 \, \text{kg}
 \end{equation}
+
 The weight of th body is defined as:
 \begin{equation}
 \text{Weight} = mg = 22.36 \times 9.8 = 219.16 \, \text{N}
