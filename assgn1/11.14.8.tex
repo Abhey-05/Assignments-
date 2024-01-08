@@ -221,50 +221,21 @@ EE23BTECH11202
 \section{Question 11.14.8}A spring balance has a scale that that reads fro 0 to 50 kg. The length of the scale is 20cm. A body is suspended from this balance , when displaced and released, oscillates with a period of 0.6s. What is weight of the body? 
 
 \section{Solution}
-
-\begin{table}[htbp]                                       \centering                                              \caption{Input Parameters}
-  \label{tab:parameters}                                  \begin{tabular}{lc}                                       \toprule                                                \textbf{Parameter} & \textbf{Value} \\                  \midrule                                                Mass ($M$) & $50$ kg \\ 
-  Maximum displacement of the spring ($l$) & $0.2$ m \\ 
-  Time period ($T$) & $0.6$ s \\                              \bottomrule                                           \end{tabular}                                         \end{table}
-
-
-The maximum mass that the scale can read is given by:
-
-	\begin{equation}
-	M = 50 \, \text{kg}
-	\end{equation}
-	
-	\begin{figure}[htbp]
-		\centering
-	\begin{tikzpicture}                                      % Draw the spring
-\draw[thick, line width=1pt] (0,0) -- (0,-2);           \draw[decorate, decoration={coil, aspect=0.5, segment length=1mm, amplitude=3mm}] (0,-2) -- (0,-4);                                                                 
-	% Draw the mass
-	\draw[thick, fill=gray!30] (-1,-4.5) rectangle (1,-5.5);                                                        \draw[thick] (0,-2) -- (0,-4.5);                                                                                % Label the mass
-	\node at (0,-5) {$M = 50$ kg};                    	\end{tikzpicture}
-	\end{figure}
-
-
-
-	The maximum displacement of the spring is equal to the length of the scale, given by:
-
-	\begin{equation}
-l = 20 \, \text{cm} = 0.2 \, \text{m}
-	\end{equation}
-
-
-	\begin{tikzpicture}                                             % Draw the spring
-	\draw[thick, line width=1pt] (0,0) -- (0,-2);           \draw[decorate, decoration={coil, aspect=0.5, segment length=1mm, amplitude=3mm}] (0,-2) -- (0,-4);                                                                 % Draw the mass
-	\draw[thick, fill=gray!30] (-1,-4.5) rectangle (1,-5.5);                                                        \draw[thick] (0,-2) -- (0,-4.5);                        % Label the mass
-	\node at (0,-5) {$M = 50$ kg};                          % Label the spring length
-	\draw[<->] (-1.5,-2) -- node[left] {$l = 0.2$ m} (-1.5,-4);                                            
-	\end{tikzpicture}
-
-
-	The time period is given as:
-
-	\begin{equation}
-T = 0.6 \, \text{s}
-	\end{equation}
+\begin{table}[htbp]
+    \centering
+    \caption{Input Parameters}
+    \label{tab:parameters}
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Parameter} & \textbf{Value} & \textbf{Description} \\
+        \midrule
+        Mass ($M$) & $50$ kg & Mass of block \\
+        Maximum displacement \\ of the spring ($l$) & $0.2$ m & Maximum elongation \\ of spring \\
+        Time period ($T$) & $0.6$ s & Period of one oscillation \\
+        Spring Constant ($k$) & $2450$ N/m & Ratio of force \\ applied and elongation \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 The maximum force exerted on the spring is calculated using:
 
@@ -273,22 +244,13 @@ F = Mg
 	\end{equation}
 where \( g \) is the acceleration due to gravity (\( 9.8 \, \text{m/s}^2 \)):\
 
-
-	\begin{tikzpicture}                                             % Draw the spring
-	\draw[thick, line width=1pt] (0,0) -- (0,-2);           \draw[decorate, decoration={coil, aspect=0.5, segment length=1mm, amplitude=3mm}] (0,-2) -- (0,-4);                                                                 % Draw the mass
-	\draw[thick, fill=gray!30] (-1,-4.5) rectangle (1,-5.5);                                                        \draw[thick] (0,-2) -- (0,-4.5);                                                                                % Label the mass
-	\node at (0,-5) {$M = 50$ kg};                          % Label the spring length
-	\draw[<->] (-1.5,-2) -- node[left] {$l = 0.2$ m} (-1.5,-4);                                                                                                             % Label the force arrows
-	\draw[->, thick, red] (0,-5.5) -- node[right] {$F = $Mg } (0,-7);                                
-
-	\end{tikzpicture}
-
-
 	\begin{equation}
 F = 50 \times 9.8 = 490 \, \text{N}
 	\end{equation}
 
-
+\begin{figure}
+    \centering
+    \resizebox{0.6\columnwidth}{!}{%
 	\begin{tikzpicture}
 	% Draw the spring
 	\draw[thick, line width=1pt] (0,0) -- (0,-2);           \draw[decorate, decoration={coil, aspect=0.5, segment length=1mm, amplitude=3mm}] (0,-2) -- (0,-4);                                                                 % Draw the mass
@@ -298,7 +260,11 @@ F = 50 \times 9.8 = 490 \, \text{N}
 	\draw[<->] (-1.5,-2) -- node[left] {$l = 0.2$ m} (-1.5,-4);                                                                                                             % Label the force arrows
 	\draw[->, thick, red] (0,-5.5) -- node[right] {$F = Mg = 490$ N} (0,-7);    
 
-	\end{tikzpicture}
+	\end{tikzpicture}%
+    }
+    \caption{Illustration of another spring-mass system}
+    \label{fig:another-spring-mass-system}
+\end{figure}
 
 
 
@@ -306,6 +272,59 @@ The spring constant, \( k \), is calculated as:
 \begin{equation}
 k = \frac{F}{l} = \frac{490}{0.2} = 2450 \, \text{N/m}^{-1}
 \end{equation}
+
+	Given the equation of motion for a mass-spring system with mass $m$ and spring constant $k$ is given by:
+
+\begin{equation} 
+	F = ma = -k\pi x
+\end{equation}
+
+This equation can be rearranged as:
+
+\begin{equation}
+	ma = -kx 
+\end{equation}
+\begin{equation}
+	m\frac{d^2x}{dt^2} = -kx 
+\end{equation}
+\begin{equation}
+	\frac{d^2x}{dt^2} + \frac{k}{m}x = 0 
+\end{equation}
+
+The solution to this second-order differential equation is of the form:
+
+\begin{equation}
+x(t) = A\cos(\omega t) + B\sin(\omega t) 
+\end{equation}
+
+Where:
+- $A$ and $B$ are constants determined by initial conditions.
+- $\omega$ represents the angular frequency.
+
+Substituting this solution into the equation, we get:
+
+\begin{equation}
+\frac{d^2x}{dt^2} + \omega^2x = 0 
+\end{equation}
+
+
+
+Comparing this with the differential equation for the mass-spring system, we get:
+
+\begin{equation}
+\omega^2 = \frac{k}{m} 
+\end{equation}
+\begin{equation}
+ \omega = \sqrt{\frac{k}{m}} 
+\end{equation}
+
+The natural frequency $f_0$ of the system is related to the angular frequency as:
+\begin{equation}
+ f_0 = \frac{\omega}{2\pi} = \frac{1}{2\pi}\sqrt{\frac{k}{m}} 
+\end{equation}
+Therefore, $f_0 = 2\pi \sqrt{\frac{m}{k}}$, which gives the frequency of free oscillations (natural frequency) of the mass-spring system based on its mass $m$ and spring constant $k$.
+
+
 The time period, \( t \), for mass \( m \) suspended from the balance is given by:
 \begin{equation}
 t = 2\pi\sqrt{\frac{m}{k}}
@@ -327,9 +346,9 @@ Therefore, the weight of the body is approximately \(219 \, \text{N}\).
 
 	Starting with Newton's second law of motion ($F = ma$) and Hooke's law ($F = -kx$) for the mass attached to a spring:
 
-\begin{equation}
+
     \text{Newton's second law: } F = ma \quad \text{and} \quad \text{Hooke's law: } F = -kx
-\end{equation}
+
 
 Given values:
 \begin{align*}
